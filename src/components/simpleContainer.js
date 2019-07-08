@@ -22,11 +22,13 @@ class SimpleContainer extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const text = this.props.text;
+    const text1 = this.props.text1;
+    const text2 = this.props.text2;
     return (
       <Container >
         <SimpleCard 
-          text = {text}
+          text1 = {text1}
+          text2 = {text2}
           handleButtonClick={this.handleButtonClick}
         />
       </Container>

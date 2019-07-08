@@ -27,7 +27,8 @@ class SimpleCard extends React.Component {
     return (
       <Card className={classes.card}>
         <CardContent>
-          <Typography>{this.props.text}</Typography>
+          <Typography>foo: {this.props.text1}</Typography>
+          <Typography>bar: {this.props.text2}</Typography>
         </CardContent>
         <CardActions>
           <Button
