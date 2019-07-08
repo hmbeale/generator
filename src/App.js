@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 import SimpleContainer from "./components/simpleContainer.js";
+import { sizeHeight } from "@material-ui/system";
 
 const styles = theme => ({
   //no styles for now
@@ -15,37 +16,41 @@ const getRandomInt = max => {
 
 const generate = () => {
   let res = '';
-  let selected = [];
+  let selected = new Map();
+  
   const maxSelected = 5;
   
-  const options = {
-    0: 'zero ',
-    1: 'one ',
-    2: 'two ',
-    3: 'three ',
-    4: 'four ', 
-    5: 'five ',
-    6: 'six ',
-    7: 'seven ', 
-    8: 'eight ', 
-    9: 'nine ', 
-    10: 'ten ', 
-    11: 'eleven ', 
-    12: 'twelve ',
-    13: 'thirteen ',
-    14: 'fourteen ',
-    15: 'fifteen ',
-    16: 'sixteen ',
-    17: 'seventeen '
-  }  
+  const options = [
+    'zero ',
+    'one ',
+    'two ',
+    'three ',
+    'four ', 
+    'five ',
+    'six ',
+    'seven ', 
+    'eight ', 
+    'nine ', 
+    'ten ', 
+    'eleven ', 
+    'twelve ',
+    'thirteen ',
+    'fourteen ',
+    'fifteen ',
+    'sixteen ',
+    'seventeen '
+  ]  
 
-  for (let i = 0; i<maxSelected; i++){
-    const newRandom = getRandomInt(Object.keys(options).length)
-    selected.push(options[newRandom]);
-    
+  //adds random items from options to selected 
+  while (selected.size < maxSelected){
+    const newRandom = getRandomInt(options.length)
+    selected.set(newRandom, options[newRandom]);
   }
 
-  res = selected.join(selected);
+  selected.forEach(function(value, key){
+    res += value;
+  })
+
   return res;
 }
 
@@ -53,7 +58,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "foo",
+      text: "press the button to generate results",
     };
   }
 

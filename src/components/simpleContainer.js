@@ -10,7 +10,7 @@ const styles = theme => ({
     maxWidth: 375,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: theme.spacing.unit * 4
+    marginTop: theme.spacing(4)
   }
 });
 
