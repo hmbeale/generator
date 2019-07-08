@@ -12,8 +12,8 @@ const styles = theme => ({
     minWidth: 275,
     maxWidth: 375,
     marginTop: 20,
-    marginLeft: 'auto',
-    marginRight: 'auto'
+    marginLeft: "auto",
+    marginRight: "auto"
   }
 });
 
@@ -27,8 +27,9 @@ class SimpleCard extends React.Component {
     return (
       <Card className={classes.card}>
         <CardContent>
-          <Typography>foo: {this.props.text1}</Typography>
-          <Typography>bar: {this.props.text2}</Typography>
+          <Typography>foo </Typography>
+          <Typography>bar: {this.props.text1}</Typography>
+          <Typography>baz: {this.props.text2}</Typography>
         </CardContent>
         <CardActions>
           <Button
@@ -38,6 +39,7 @@ class SimpleCard extends React.Component {
           >
             Generate
           </Button>
+          
         </CardActions>
       </Card>
     );

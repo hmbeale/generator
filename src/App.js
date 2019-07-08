@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 import SimpleContainer from "./components/simpleContainer.js";
+import { keys } from "@material-ui/core/styles/createBreakpoints";
 import { sizeHeight } from "@material-ui/system";
 
 const styles = theme => ({
@@ -13,9 +14,10 @@ const getRandomInt = max => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-//n is how many items to generate
+//returns n generated items 
 const generate = n => {
   let res = "";
+  //use map so no duplicates
   let selected = new Map();
 
   const options = [
@@ -49,8 +51,12 @@ const generate = n => {
     res += value;
   });
 
-  return res;
+  //return res;
+  return selected
 };
+
+//generate and format function? 
+//take out of handleClick? 
 
 class App extends React.Component {
   constructor(props) {
@@ -66,13 +72,36 @@ class App extends React.Component {
       return Math.floor(Math.random() * Math.floor(max));
     };
 
+    let counter = 0;
+
     if (getRandomInt(2) > 0) {
-      this.setState({ text1: generate(3) });
-      this.setState({ text2: generate(2) });
+      //3-2 split
+      counter = 3;
     } else {
-      this.setState({ text1: generate(2) });
-      this.setState({ text2: generate(3) });
+      //2-3 split
+      counter = 2;
     }
+
+    //allText is a map not a string
+    const allText = generate(5);
+    
+    let tempText1 = '';
+    let tempText2 = '';
+
+    //assigns either a 3-2 split or 2-3 split depending on counter
+    allText.forEach(function(value, key){
+      if (counter>0){
+        tempText1 += value;
+      }else{
+        tempText2 += value;
+      }
+
+      counter--;
+    })
+
+    this.setState({ text1: tempText1 });
+    this.setState({ text2: tempText2 });
+
   };
 
   render() {
