@@ -27,9 +27,9 @@ class SimpleCard extends React.Component {
     return (
       <Card className={classes.card}>
         <CardContent>
-          <Typography>favicon site title </Typography>
-          <Typography>bar: {this.props.text1}</Typography>
-          <Typography>baz: {this.props.text2}</Typography>
+          <Typography>Skyrim Character Generator </Typography>
+          <Typography>Major Skills: {this.props.text1}</Typography>
+          <Typography>Minor Skills: {this.props.text2}</Typography>
         </CardContent>
         <CardActions>
           <Button
