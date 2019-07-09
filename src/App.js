@@ -21,24 +21,24 @@ const generate = n => {
   let selected = new Map();
 
   const options = [
-    "zero ",
-    "one ",
-    "two ",
-    "three ",
-    "four ",
-    "five ",
-    "six ",
-    "seven ",
-    "eight ",
-    "nine ",
-    "ten ",
-    "eleven ",
-    "twelve ",
-    "thirteen ",
-    "fourteen ",
-    "fifteen ",
-    "sixteen ",
-    "seventeen "
+    "Alteration ",
+    "Conjuration ",
+    "Destruction ",
+    "Enchanting ",
+    "Illusion ",
+    "Restoration ",
+    "Archery ",
+    "Block ",
+    "Heavy Armor ",
+    "One Handed ",
+    "Smithing ",
+    "Two Handed ",
+    "Alchemy ",
+    "Light Armor ",
+    "Lockpick ",
+    "Pickpocket ",
+    "Sneak ",
+    "Speech "
   ];
 
   //adds random items from options to selected
