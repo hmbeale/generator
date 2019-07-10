@@ -10,7 +10,7 @@ import CardContent from "@material-ui/core/CardContent";
 const styles = theme => ({
   card: {
     minWidth: 275,
-    maxWidth: 375,
+    maxWidth: 450,
     marginTop: 20,
     marginLeft: "auto",
     marginRight: "auto"
