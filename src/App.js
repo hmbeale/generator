@@ -62,8 +62,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text1: "press the button to generate results",
-      text2: "foo"
+      text1: "",
+      text2: ""
     };
   }
 
